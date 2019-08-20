@@ -1,0 +1,17 @@
+# Find overlapping numbers
+
+def makeInt(filename):
+  list_of_ints = []
+  with open(filename) as f:
+    line = f.readline()
+    while line:
+        list_of_ints.append(int(line))
+        line = f.readline()
+  return list_of_ints
+
+primeslist = makeInt('primenumbers.txt')
+happieslist = makeInt('happynumbers.txt')
+
+overlaplist = [elem for elem in primeslist if elem in happieslist]
+
+print overlaplist
