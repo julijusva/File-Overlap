@@ -1,13 +1,12 @@
 # Find overlapping numbers
 
 def makeInt(filename):
-  list_of_ints = []
-  with open(filename) as f:
-    line = f.readline()
-    while line:
-        list_of_ints.append(int(line))
-        line = f.readline()
-  return list_of_ints
+    list_of_ints = []
+
+    with open(filename) as f:
+        for line in f:
+            list_of_ints.append(int(line))
+    return list_of_ints
 
 primeslist = makeInt('primenumbers.txt')
 happieslist = makeInt('happynumbers.txt')
